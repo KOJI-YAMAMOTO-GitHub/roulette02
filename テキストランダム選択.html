@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム選択プログラム</title>
+</head>
+<body>
+    <textarea id="inputText" rows="5" cols="50"></textarea>
+    <button onclick="selectRandomValue()">抽選</button>
+    <p id="output"></p>
+
+    <script>
+        function selectRandomValue() {
+            const inputText = document.getElementById("inputText").value;
+            const values = inputText.split("\n"); // 改行で区切った値を配列に格納
+            const randomIndex = Math.floor(Math.random() * values.length); // ランダムなインデックスを生成
+            const selectedValue = values[randomIndex]; // ランダムに選択された値
+
+            document.getElementById("output").textContent = `結果: ${selectedValue}`;
+        }
+    </script>
+</body>
+</html>
